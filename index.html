@@ -115,8 +115,9 @@
   .step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:700;margin-bottom:14px}
   .step h3{font-size:1.18rem}
   .step p{color:var(--muted);margin:0}
-  .faq{margin-top:72px;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
-  .faq h2{grid-column:1/-1}
+  .faq{margin-top:72px}
+  .faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;align-items:start}
+  .faq-col{display:flex;flex-direction:column;gap:14px}
   details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
   summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
   summary::-webkit-details-marker{display:none}
@@ -135,7 +136,7 @@
     section{padding:56px 0}
     nav a:not(.btn){display:none}
     .hero{padding-top:40px}
-    .hero .grid,.split,.split.rev,.split.wide,.split.narrowmedia,.steps,.faq,.strip .wrap,.band .cols{grid-template-columns:1fr}
+    .hero .grid,.split,.split.rev,.split.wide,.split.narrowmedia,.steps,.faq-cols,.strip .wrap,.band .cols{grid-template-columns:1fr}
     .split.rev .copy{order:0}
     .split .media-first{order:-1}
     .stage{margin-right:0;padding-bottom:24px}
@@ -390,13 +391,19 @@
 
     <div class="faq" id="faq">
       <h2>Questions owners ask</h2>
-      <details><summary>Do my staff need to be good with computers?</summary><p>No. If they can use a phone, they can mark a dish sold out: open the staff area, find the dish, tap, publish.</p></details>
-      <details><summary>What happens if the Wi-Fi or the internet goes down?</summary><p>Each tablet keeps the last published menu and its photos and keeps showing it, then reconnects by itself. The menu runs inside your restaurant, so an internet outage doesn't take it down.</p></details>
-      <details><summary>Can a guest get into the staff area?</summary><p>Not by accident. It takes a still finger on a hidden corner for five seconds, and then a staff PIN. Going back to the menu signs out.</p></details>
-      <details><summary>Can the menu be in Spanish and English?</summary><p>Yes. You write the menu in your own words, in any language or both side by side, like "Antojitos / Appetizers" in our demo.</p></details>
-      <details><summary>Do we need to buy tablets?</summary><p>No. We provide the tablets, and we're happy to work it out if you already have some or want a different setup. Tell us how many tables you have and we'll recommend what you need, so you know before you decide anything.</p></details>
-      <details><summary>What if we need help?</summary><p>We offer support. Write to us and we'll help you with the menu, the tablets or anything else along the way.</p></details>
-      <details><summary>Can we change the design later?</summary><p>Yes. New seasons, sections or promotions: we can do it for you, or you can use the design studio yourself.</p></details>
+      <div class="faq-cols">
+        <div class="faq-col">
+          <details><summary>Do my staff need to be good with computers?</summary><p>No. If they can use a phone, they can mark a dish sold out: open the staff area, find the dish, tap, publish.</p></details>
+          <details><summary>Can a guest get into the staff area?</summary><p>Not by accident. It takes a still finger on a hidden corner for five seconds, and then a staff PIN. Going back to the menu signs out.</p></details>
+          <details><summary>Do we need to buy tablets?</summary><p>No. We provide the tablets, and we're happy to work it out if you already have some or want a different setup. Tell us how many tables you have and we'll recommend what you need, so you know before you decide anything.</p></details>
+          <details><summary>Can we change the design later?</summary><p>Yes. New seasons, sections or promotions: we can do it for you, or you can use the design studio yourself.</p></details>
+        </div>
+        <div class="faq-col">
+          <details><summary>What happens if the Wi-Fi or the internet goes down?</summary><p>Each tablet keeps the last published menu and its photos and keeps showing it, then reconnects by itself. The menu runs inside your restaurant, so an internet outage doesn't take it down.</p></details>
+          <details><summary>Can the menu be in Spanish and English?</summary><p>Yes. You write the menu in your own words, in any language or both side by side, like "Antojitos / Appetizers" in our demo.</p></details>
+          <details><summary>What if we need help?</summary><p>We offer support. Write to us and we'll help you with the menu, the tablets or anything else along the way.</p></details>
+        </div>
+      </div>
     </div>
   </div>
 </section>
