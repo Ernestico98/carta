@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta · Tablet menus for restaurants</title>
+<meta name="description" content="Beautiful tablet menus in your brand, that your team can update in seconds. When a dish sells out, every table knows.">
+<meta property="og:title" content="Carta · Tablet menus for restaurants">
+<meta property="og:description" content="A menu designed like your brand, on every table. Your team updates it in seconds.">
+<meta property="og:image" content="assets/img/tablet-landscape-home.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14100c; --bg2:#1b1510; --card:#221a13; --line:#3a2d20;
+    --fg:#f5efe6; --muted:#bfae96; --cap:#cdbfa9; --gold:#e0b050; --gold2:#c98f2a; --ink:#2a1606;
+    --radius:18px; --max:1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.12;margin:0 0 .5em}
+  h1{font-size:clamp(2.1rem,4.2vw,3.3rem);font-weight:700}
+  h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700}
+  h3{font-size:1.3rem;font-weight:600}
+  p{margin:0 0 1em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.9em}
+  .lead{font-size:1.13rem;color:var(--muted);max-width:60ch}
+  section{padding:96px 0}
+  .alt{background:var(--bg2);border-block:1px solid var(--line)}
+  .glow{background:radial-gradient(900px 420px at 50% 0,#3a2713 0,transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(20,16,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:"Playfair Display",serif;font-weight:700;font-size:1.45rem;text-decoration:none;color:var(--gold)}
+  nav{display:flex;gap:26px;align-items:center;font-size:.95rem}
+  nav a{text-decoration:none;color:var(--muted)}
+  nav a:hover{color:var(--fg)}
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--gold);transition:transform .15s}
+  .btn.primary{background:linear-gradient(180deg,#f3cd6c,#d49a30);color:var(--ink)}
+  .btn.ghost{color:var(--fg)}
+  .btn:hover{transform:translateY(-2px)}
+  nav .btn{padding:8px 18px;font-size:.9rem}
+
+  /* hero */
+  .hero{padding:64px 0 56px;background:radial-gradient(1000px 520px at 78% 8%,#3a2713 0,transparent 70%)}
+  .hero .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .stage{position:relative;padding-bottom:40px;margin-right:-20px}
+  .stage .port{position:absolute;width:29%;left:-6%;bottom:0}
+
+  /* strip */
+  .strip{padding:34px 0;border-block:1px solid var(--line);background:var(--bg2)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .strip b{display:block;font-family:"Playfair Display",serif;font-size:1.2rem;color:var(--fg);margin-bottom:2px}
+  .strip span{color:var(--muted);font-size:.95rem}
+
+  /* frames */
+  .dev{background:#0a0806;border-radius:26px;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px #2c2118}
+  .dev img,.dev video{border-radius:17px;width:100%;background:#0a0806}
+  .dev.p{border-radius:30px;padding:11px}
+  .win{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 1px #2c2118}
+  .win .bar{height:28px;background:#ebe7df;display:flex;align-items:center;gap:7px;padding:0 12px}
+  .win .bar i{width:10px;height:10px;border-radius:50%;background:#cfc8bb;display:block}
+  .win img,.win video{width:100%}
+  .stagevid{border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 1px #2c2118}
+  figure{margin:0}
+  figcaption{font-size:.9rem;color:var(--cap);margin-top:12px}
+
+  /* splits */
+  .split{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+  .split.rev{grid-template-columns:1.25fr 1fr}
+  .split.wide{grid-template-columns:1.5fr 1fr}
+  .split.rev .copy{order:2}
+  .split.narrowmedia{grid-template-columns:1.3fr .7fr}
+  .ticks{list-style:none;padding:0;margin:20px 0 0}
+  .ticks li{position:relative;padding-left:30px;margin:.65em 0;color:#e6dccb}
+  .ticks li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:inset 0 0 0 4px var(--bg)}
+  .alt .ticks li::before,.glow .ticks li::before{box-shadow:inset 0 0 0 4px var(--bg2)}
+  .ticks b{color:var(--fg)}
+  .sub{margin-top:88px}
+  .tabletclip{max-width:330px;margin:0 auto;width:100%}
+
+  /* trio */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px}
+  .trio .shot{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 0 1px #2c2118;background:#fff}
+  .trio h3{font-size:1.15rem;margin:18px 0 6px}
+  .trio p{color:var(--muted);font-size:.97rem;margin:0}
+
+  /* band */
+  .band{padding:72px 0;background:linear-gradient(180deg,#2a1d10,#1a130c);border-block:1px solid #4a3620}
+  .band h2{text-align:center;margin-bottom:36px}
+  .band .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .band .col{background:rgba(0,0,0,.25);border:1px solid #4a3620;border-radius:var(--radius);padding:24px}
+  .band .col b{display:block;font-size:1.05rem;margin-bottom:6px;color:var(--gold)}
+  .band .col span{color:#e2d5c0;font-size:.97rem}
+
+  /* examples */
+  .variant{margin-top:56px}
+  .variant h3{margin-bottom:.2em}
+  .variant > p{color:var(--muted);max-width:68ch}
+  .shots{display:grid;gap:22px;margin-top:20px;align-items:start}
+  .shots.p3{grid-template-columns:repeat(3,1fr);max-width:900px}
+  .shots.l2{grid-template-columns:repeat(2,1fr)}
+  .shots.l3{grid-template-columns:repeat(3,1fr)}
+
+  /* how + faq */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;counter-reset:s}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;counter-increment:s}
+  .step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:700;margin-bottom:14px}
+  .step h3{font-size:1.18rem}
+  .step p{color:var(--muted);margin:0}
+  .faq{margin-top:72px;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+  .faq h2{grid-column:1/-1}
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--gold);font-size:1.3rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin:10px 0 0}
+
+  /* contact */
+  .contact{text-align:center}
+  .contact .lead{margin:0 auto 26px}
+  .contact small{display:block;color:var(--muted);margin-top:18px;font-size:.95rem}
+  .contact small a{color:var(--gold)}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+
+  @media (max-width:900px){
+    section{padding:56px 0}
+    nav a:not(.btn){display:none}
+    .hero{padding-top:40px}
+    .hero .grid,.split,.split.rev,.split.wide,.split.narrowmedia,.steps,.faq,.strip .wrap,.band .cols{grid-template-columns:1fr}
+    .split.rev .copy{order:0}
+    .split .media-first{order:-1}
+    .stage{margin-right:0;padding-bottom:24px}
+    .stage .port{width:26%;left:auto;right:-2%;bottom:-8px}
+    .hide-m{display:none}
+    .tabletclip{max-width:250px}
+    .sub{margin-top:64px}
+    /* swipeable rows instead of long stacks */
+    .trio,.shots.p3,.shots.l2,.shots.l3{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;gap:16px;margin-inline:-20px;padding:4px 20px 14px}
+    .trio > figure{flex:0 0 78vw;scroll-snap-align:start}
+    .shots.p3 > figure{flex:0 0 58vw;scroll-snap-align:start}
+    .shots.l2 > figure,.shots.l3 > figure{flex:0 0 72vw;scroll-snap-align:start}
+    .swipehint{display:block}
+  }
+  .swipehint{display:none;color:var(--muted);font-size:.85rem;margin-top:4px}
+  .textlink{color:var(--fg);font-weight:600;text-decoration:none;align-self:center;border-bottom:1px solid var(--gold2)}
+  .textlink:hover{color:var(--gold)}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Carta</a>
+    <nav>
+      <a href="#design">Design</a>
+      <a href="#team">Your team</a>
+      <a href="#examples">Examples</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn primary" href="mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant&amp;body=Restaurant%20name%3A%20%0D%0ACity%3A%20%0D%0AHow%20many%20tables%20or%20tablets%3A%20%0D%0ALink%20or%20photo%20of%20our%20current%20menu%3A%20%0D%0A">Email us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Tablet menus for restaurants</div>
+      <h1>Beautiful tablet menus your team can update in seconds.</h1>
+      <p class="lead">We design a photo-rich menu in your brand for the tablets on your tables. When a dish sells out or a price changes, your manager updates every screen at once.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant&amp;body=Restaurant%20name%3A%20%0D%0ACity%3A%20%0D%0AHow%20many%20tables%20or%20tablets%3A%20%0D%0ALink%20or%20photo%20of%20our%20current%20menu%3A%20%0D%0A">Email us about your menu</a>
+        <a class="textlink" href="#team">See how your team uses it →</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="dev"><img src="assets/img/tablet-landscape-home.webp" alt="A sideways tablet showing a sample restaurant menu" width="2560" height="1600"></div>
+      <div class="dev p port"><img src="assets/img/tablet-portrait-home.webp" alt="An upright tablet showing the same menu designed for portrait" width="1600" height="2560"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><b>Designed like your brand</b><span>Your logo, colours, fonts and photos, page by page.</span></div>
+    <div><b>Updated in seconds</b><span>Sold out, prices, specials: one tap and every table changes.</span></div>
+    <div><b>Runs in your restaurant</b><span>On your own Wi-Fi, without depending on the internet.</span></div>
+  </div>
+</div>
+
+<!-- DESIGN -->
+<section class="glow" id="design">
+  <div class="wrap">
+    <div class="split">
+      <div class="copy">
+        <div class="eyebrow">The look</div>
+        <h2>A real design studio for your menu</h2>
+        <p class="lead">We lay out every page of your menu visually, with a live preview of the exact tablet. It's like Figma, made for restaurant menus. We build it with you, and you keep the studio for new seasons and promotions.</p>
+        <ul class="ticks">
+          <li><b>Restyle the whole menu in one click</b> for a new season or promotion, then fine-tune fonts, colours and backgrounds</li>
+          <li><b>Ready-made sections</b>: covers, category buttons, dish cards, specials, promotions, slideshows, opening hours</li>
+          <li><b>Upright or sideways tablets</b>: pages reflow to the screen, with tabs on top or a side menu</li>
+          <li><b>Try it</b> before it goes live, exactly as guests will see it</li>
+        </ul>
+      </div>
+      <figure class="win">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/video/design-looks.jpg" width="1100" height="752"><source src="assets/video/design-looks.mp4" type="video/mp4"></video>
+      </figure>
+    </div>
+
+    <figure class="win sub hide-m">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <img src="assets/img/admin-editor-crop.webp" alt="The Carta design studio: pages on the left and the live tablet preview" width="2520" height="2000" loading="lazy">
+    </figure>
+    <figcaption class="hide-m" style="margin-top:10px">The design studio, where your menu is built. Your staff never need this screen: they get the simple forms below.</figcaption>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="split narrowmedia">
+      <div class="copy">
+        <div class="eyebrow">The day to day</div>
+        <h2>Your manager fixes the menu from the tablet in their hand</h2>
+        <p class="lead">A long press in a hidden corner of any table's tablet opens the staff area. Enter a PIN, tap the dish, publish. Every table is updated before the next order.</p>
+        <ul class="ticks">
+          <li><b>Sold out</b>, and back on when the kitchen has it again</li>
+          <li><b>Prices, sizes, descriptions and photos</b>, or a brand-new dish</li>
+          <li><b>Today's special and promotions</b> swapped in a couple of taps</li>
+          <li><b>Staff change the content, never the design</b>, so nothing breaks</li>
+        </ul>
+      </div>
+      <figure class="dev p tabletclip media-first">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/video/staff-tablet.jpg" width="720" height="1152"><source src="assets/video/staff-tablet.mp4" type="video/mp4"></video>
+      </figure>
+    </div>
+
+    <div class="trio">
+      <figure>
+        <div class="shot"><img src="assets/img/staff-special-crop.webp" alt="Staff view: change today's special and its photo, with a live preview" width="1600" height="1400" loading="lazy"></div>
+        <h3>Change today's special</h3>
+        <p>Staff see only what they may change on each page, with a live preview beside it.</p>
+      </figure>
+      <figure>
+        <div class="shot"><img src="assets/img/staff-dish-form-crop.webp" alt="Staff view: editing a dish's price, description and photos" width="1600" height="1400" loading="lazy"></div>
+        <h3>Edit any dish</h3>
+        <p>Price, several sizes, descriptions, photos and availability, in one simple form.</p>
+      </figure>
+      <figure>
+        <div class="shot"><img src="assets/img/tablet-corner-card-crop.webp" alt="The hidden staff card on a guest tablet with a Staff access button" width="1600" height="1400" loading="lazy"></div>
+        <h3>Hidden from guests</h3>
+        <p>Staff open it from any table's tablet. Guests never see it.</p>
+      </figure>
+    </div>
+    <span class="swipehint">Swipe to see more →</span>
+
+    <div class="split rev wide sub">
+      <figure class="stagevid hide-m">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/video/live.jpg" width="1600" height="900"><source src="assets/video/live.mp4" type="video/mp4"></video>
+      </figure>
+      <div class="copy">
+        <h2>Or from the office computer</h2>
+        <p class="lead">The same staff area works from any computer on the restaurant's network. Mark a dish sold out and watch the tablet change.</p>
+        <ul class="ticks">
+          <li><b>Search and filter</b> every dish, by tags like lunch, dinner or gluten-free</li>
+          <li><b>Change many dishes at once</b></li>
+          <li><b>See what's not on the tablets yet</b> before you publish</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE -->
+<section class="band">
+  <div class="wrap">
+    <h2>Built for a busy Saturday night</h2>
+    <div class="cols">
+      <div class="col"><b>The Wi-Fi drops?</b><span>Every tablet keeps the last menu and its photos and keeps showing it, then reconnects by itself.</span></div>
+      <div class="col"><b>A curious guest?</b><span>The staff area needs a five-second press in a hidden corner and a PIN.</span></div>
+      <div class="col"><b>Someone leaves the team?</b><span>Everyone has their own PIN. Remove one in seconds without touching the others.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLETS -->
+<section>
+  <div class="wrap">
+    <div class="split rev wide">
+      <figure class="win">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="assets/img/admin-tablets-crop.webp" alt="The Tablets screen: each tablet with its status and actions" width="2790" height="756" loading="lazy">
+      </figure>
+      <div class="copy">
+        <div class="eyebrow">Peace of mind</div>
+        <h2>See every tablet from your desk</h2>
+        <p class="lead">Which tablets are on, and whether they show the latest menu. Find one, restart it or send it the menu again without walking the floor.</p>
+        <ul class="ticks">
+          <li><b>Tablets find the menu by themselves</b> on your Wi-Fi</li>
+          <li><b>Name them</b> (Bar, Patio, Table 4); a new tablet joins with one tap</li>
+          <li><b>App updates</b> installed on the tablets from the office</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES -->
+<section class="alt" id="examples">
+  <div class="wrap">
+    <div class="eyebrow">Examples</div>
+    <h2>One restaurant, three very different menus</h2>
+    <p class="lead">All made with Carta for Casa Tucán, our demo restaurant, with sample dishes and photos, shown exactly as the tablet shows them.</p>
+
+    <div class="variant">
+      <h3>1 · Branded, upright</h3>
+      <p>Photo-led, with decorations, a special of the day, category buttons and dish photos. For a tablet standing on the table.</p>
+      <div class="shots p3">
+        <figure><div class="dev p"><img src="assets/img/tablet-portrait-home.webp" alt="Upright branded home page" width="1600" height="2560" loading="lazy"></div><figcaption>Home with today's special</figcaption></figure>
+        <figure><div class="dev p"><img src="assets/img/tablet-portrait-appetizers.webp" alt="Upright dish list with photos" width="1600" height="2560" loading="lazy"></div><figcaption>Dishes with photos</figcaption></figure>
+        <figure><div class="dev p"><img src="assets/img/tablet-portrait-beverages.webp" alt="Upright drinks page with a slideshow" width="1600" height="2560" loading="lazy"></div><figcaption>Drinks with a slideshow</figcaption></figure>
+      </div>
+      <span class="swipehint">Swipe to see more →</span>
+    </div>
+
+    <div class="variant">
+      <h3>2 · Branded, sideways</h3>
+      <p>The same brand on a wide screen: logo and navigation on the left, featured dishes on the right, dishes as large photo cards.</p>
+      <div class="shots l2">
+        <figure><div class="dev"><img src="assets/img/tablet-landscape-menu.webp" alt="Sideways categories in two columns" width="2560" height="1600" loading="lazy"></div><figcaption>Categories</figcaption></figure>
+        <figure><div class="dev"><img src="assets/img/tablet-landscape-appetizers.webp" alt="Sideways dishes as photo cards" width="2560" height="1600" loading="lazy"></div><figcaption>Dishes as photo cards</figcaption></figure>
+      </div>
+      <span class="swipehint">Swipe to see more →</span>
+    </div>
+
+    <div class="variant">
+      <h3>3 · Clean, one page with a side menu</h3>
+      <p>Light and simple: the whole menu on one scrolling page, with a side menu that follows the sections.</p>
+      <div class="shots l3">
+        <figure><div class="dev"><img src="assets/img/tablet-side-0.webp" alt="Clean sideways menu, starters" width="2560" height="1600" loading="lazy"></div><figcaption>Starters</figcaption></figure>
+        <figure><div class="dev"><img src="assets/img/tablet-side-mains.webp" alt="Clean sideways menu, mains as photo cards" width="2560" height="1600" loading="lazy"></div><figcaption>Mains</figcaption></figure>
+        <figure><div class="dev"><img src="assets/img/tablet-side-drinks.webp" alt="Clean sideways menu, drinks" width="2560" height="1600" loading="lazy"></div><figcaption>Drinks</figcaption></figure>
+      </div>
+      <span class="swipehint">Swipe to see more →</span>
+    </div>
+
+    <div class="split narrowmedia sub">
+      <div class="copy">
+        <h2>Easy to browse, hard to resist</h2>
+        <p class="lead">Guests explore by touch: big photos, clear prices, and every dish one tap away.</p>
+        <ul class="ticks">
+          <li><b>Dish pages</b> with photos, descriptions, sizes and allergens</li>
+          <li><b>Search</b> across the whole menu</li>
+          <li><b>Sold-out dishes are marked</b> as soon as you change them</li>
+          <li><b>Back to the start</b> by itself when nobody has touched it for a while</li>
+        </ul>
+      </div>
+      <figure class="dev p tabletclip media-first">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/video/tablet-tour.jpg" width="720" height="1152"><source src="assets/video/tablet-tour.mp4" type="video/mp4"></video>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- HOW + FAQ -->
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2>From first email to tablets on the tables</h2>
+    <div class="steps">
+      <div class="step"><h3>We design your menu with you</h3><p>Your brand, dishes and photos, for upright or sideways tablets. We can start from one of the examples above.</p></div>
+      <div class="step"><h3>We set everything up</h3><p>We install the small computer that runs the menu and connect your tablets to it over your Wi-Fi.</p></div>
+      <div class="step"><h3>Your team runs it</h3><p>We show your managers how to update it. We're here for new looks, seasons and support.</p></div>
+    </div>
+
+    <div class="faq" id="faq">
+      <h2>Questions owners ask</h2>
+      <details><summary>Do my staff need to be good with computers?</summary><p>No. If they can use a phone, they can mark a dish sold out: open the staff area, find the dish, tap, publish.</p></details>
+      <details><summary>What happens if the Wi-Fi or the internet goes down?</summary><p>Each tablet keeps the last published menu and its photos and keeps showing it, then reconnects by itself. The menu runs inside your restaurant, so an internet outage doesn't take it down.</p></details>
+      <details><summary>Can a guest get into the staff area?</summary><p>Not by accident. It takes a still finger on a hidden corner for five seconds, and then a staff PIN. Going back to the menu signs out.</p></details>
+      <details><summary>Can the menu be in Spanish and English?</summary><p>Yes. You write the menu in your own words, in any language or both side by side, like "Antojitos / Appetizers" in our demo.</p></details>
+      <details><summary>What do I need to buy?</summary><p>Android tablets for your tables, and a small computer that runs the menu in your restaurant. Tell us how many tables you have and we'll recommend what to get, so you know exactly what's needed before you decide anything.</p></details>
+      <details><summary>Can we change the design later?</summary><p>Yes. New seasons, sections or promotions: we can do it for you, or you can use the design studio yourself.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact glow" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get Carta</div>
+    <h2>Send us your menu. We'll show you how it could look.</h2>
+    <p class="lead">Tell us your restaurant's name, roughly how many tables, and share a photo or link of your current menu. We'll reply by email.</p>
+    <p><a class="btn primary" href="mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant&amp;body=Restaurant%20name%3A%20%0D%0ACity%3A%20%0D%0AHow%20many%20tables%20or%20tablets%3A%20%0D%0ALink%20or%20photo%20of%20our%20current%20menu%3A%20%0D%0A">Email us about your menu</a></p>
+    <small>or write to <a href="mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant">hi@ernestodavidph.com</a></small>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© Carta · <a href="mailto:hi@ernestodavidph.com">hi@ernestodavidph.com</a> · Casa Tucán is a demo restaurant created to show the product.</div>
+</footer>
+
+</body>
+</html>
