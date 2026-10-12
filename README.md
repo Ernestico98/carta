@@ -5,7 +5,7 @@
 **Digital menus for restaurant tablets.**
 Design every page like a brand. Update every tablet in seconds.
 
-[**View the website**](https://ernestico98.github.io/carta/) · [Contact: hi@ernestodavidph.com](mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant)
+[**View the website**](https://ernestodavidph.com/carta/) · [Contact: hi@ernestodavidph.com](mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant)
 
 <img src="assets/img/tablet-landscape-home.webp" alt="Carta sample menu on a sideways tablet" width="760">
 
