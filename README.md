@@ -5,7 +5,7 @@
 **Digital menus for restaurant tablets.**
 Design every page like a brand. Update every tablet in seconds.
 
-[**View the website**](https://ernestodavidph.github.io/carta/) · [Contact: hi@ernestodavidph.com](mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant)
+[**View the website**](https://ernestico98.github.io/carta/) · [Contact: hi@ernestodavidph.com](mailto:hi@ernestodavidph.com?subject=Carta%20for%20my%20restaurant)
 
 <img src="assets/img/tablet-landscape-home.webp" alt="Carta sample menu on a sideways tablet" width="760">
 
@@ -95,8 +95,8 @@ All screens are from the live demo, built for Casa Tucán, a fictional restauran
 ## How it works
 
 1. **We design it with you.** Your brand, dishes and photos, laid out for upright or sideways tablets.
-2. **We set up your tablets.** A small server runs in your restaurant and the tablets connect over your Wi-Fi.
-3. **Your team runs it.** Staff update prices, sold-out dishes and photos and publish. We stay available for new looks, seasons and support.
+2. **We set everything up.** We bring the tablets, install the small computer that runs the menu and connect everything over your Wi-Fi.
+3. **Your team runs it.** Staff update prices, sold-out dishes and photos and publish. We offer support, new looks and seasons.
 
 ## Get Carta
 
